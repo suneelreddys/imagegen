@@ -29,7 +29,7 @@ pipeline = StableDiffusionControlNetImg2ImgPipeline.from_pretrained(
 pipeline.enable_model_cpu_offload()
 
 # Load initial image
-url = "https://i.ibb.co/B2RPzG0/Screenshot-2025-04-29-173702.png"
+url = "https://i.ibb.co/B2RPzGg0/Screenshot-2025-04-29-173702.png"
 init_image = load_image(url)
 
 # Create canny edge map for structure preservation
