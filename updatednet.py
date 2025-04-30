@@ -45,9 +45,7 @@ face_image = init_image
 
 # Improved prompt with more emphasis on recognizable features
 prompt = (
-    "Studio Ghibli style anime portrait, soft painted textures, hand-drawn look, "
-    "emotive large eyes, subtle facial expression, delicate shading, "
-    "vibrant forest light, serene background, warm nostalgic tone"
+    "person in the jungle cold color palette, muted colors, detailed, 8k,"
 )
 
 
@@ -61,7 +59,7 @@ negative_prompt = (
 # Generate the image with dual ControlNets
 result = pipeline(
     prompt=prompt,
-    negative_prompt=negative_prompt,
+    #negative_prompt=negative_prompt,
     image=init_image,
     control_image=[canny_image, face_image],
     controlnet_conditioning_scale=[0.7, 0.7],  # Balance structure and face preservation
