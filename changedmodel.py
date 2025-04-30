@@ -18,7 +18,7 @@ pipeline = StableDiffusionControlNetImg2ImgPipeline.from_pretrained(
     torch_dtype=torch.float16,
     safety_checker=None
 )
-
+pipeline = pipeline.to("cuda")
 # Move to GPU and enable memory optimizations
 pipeline.enable_model_cpu_offload()
 # pipeline.enable_xformers_memory_efficient_attention()  # Uncomment if you have xformers installed
@@ -26,6 +26,7 @@ pipeline.enable_model_cpu_offload()
 # Load initial image
 url = "https://i.ibb.co/B2RPzGg0/Screenshot-2025-04-29-173702.png"
 init_image = load_image(url)
+init_image = init_image.resize((768, 768))
 
 # Convert PIL image to numpy array for Canny edge detection
 init_image_np = np.array(init_image)
