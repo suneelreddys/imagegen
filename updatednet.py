@@ -45,20 +45,12 @@ face_image = init_image
 
 # Improved prompt with more emphasis on recognizable features
 prompt = (
-    "Studio Ghibli art style, highly detailed anime portrait, hand-painted by Hayao Miyazaki, "
-    "clear facial features with expressive eyes, beautiful watercolor painting, "
-    "detailed smooth brushstrokes, soft pastel colors, vibrant and clean linework, "
-    "distinctive Ghibli character design with natural proportions, "
-    "warm lighting, masterpiece quality, highest quality illustration, "
-    "cinematic composition from 'Howl's Moving Castle', award-winning artwork, "
-    "clean sharp focused details"
+    "Ghibli style, detailed anime portrait, clear face, watercolor, Miyazaki art, smooth details"
 )
 
 # Enhanced negative prompt
 negative_prompt = (
-    "amateur, ugly, distorted face, blurry, grainy, cropped, text, watermark, signature, "
-    "deformed features, disconnected limbs, poorly drawn hands, incorrect anatomy, "
-    "over-saturated, bad proportions, weird colors, collage style, abstract art"
+    "blurry, distorted, low quality, deformed face, bad anatomy"
 )
 
 # Generate the image with dual ControlNets
@@ -69,7 +61,7 @@ result = pipeline(
     control_image=[canny_image, face_image],
     controlnet_conditioning_scale=[0.7, 0.7],  # Balance structure and face preservation
     guidance_scale=8.0,          # Stronger prompt adherence
-    strength=0.65,               # Lower strength to preserve more of the original image 
+    strength=0.5,               # Lower strength to preserve more of the original image 
     num_inference_steps=50,      # More steps for better quality
     seed=42                      # Fixed seed for reproducibility
 ).images[0]
