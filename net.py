@@ -24,7 +24,7 @@ pipeline.enable_model_cpu_offload()
 # pipeline.enable_xformers_memory_efficient_attention()  # Uncomment if you have xformers installed
 
 # Load initial image
-url = "https://i.ibb.co/B2RPzG0/Screenshot-2025-04-29-173702.png"
+url = "https://i.ibb.co/B2RPzGg0/Screenshot-2025-04-29-173702.png"
 init_image = load_image(url)
 
 # Convert PIL image to numpy array for Canny edge detection
