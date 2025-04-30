@@ -52,6 +52,10 @@ negative_prompt = (
     "distorted anatomy, deformed, extra limbs, mutated, ugly, oversaturated"
 )
 
+# Fix: Explicitly set the required parameters to avoid type error
+# Get original image dimensions
+width, height = init_image.size
+
 # Generate the image with ControlNet for better detail preservation
 result = pipeline(
     prompt=prompt,
@@ -61,7 +65,13 @@ result = pipeline(
     controlnet_conditioning_scale=0.75,  # Balanced control for structure
     strength=0.8,                # Higher for more stylization
     guidance_scale=8.5,          # Balanced for better results
-    num_inference_steps=50       # More steps for quality
+    num_inference_steps=50,      # More steps for quality
+    # Fix for the error: explicitly provide original_size, crop_coords, and aesthetic_score as integers
+    original_size=(height, width),  # Order is (height, width) for SDXL
+    target_size=(height, width),  
+    crops_coords_top_left=(0, 0),
+    aesthetic_score=6,  # An integer value between 0-10
+    negative_aesthetic_score=2,
 ).images[0]
 
 # Make a comparison grid with original and result
