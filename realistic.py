@@ -43,14 +43,14 @@ canny_image = Image.fromarray(canny_image)
 
 # Universal Ghibli style prompt that works for any image
 prompt = (
-    "Watercolor portrait in Ghibli style, accurate skin tones, soft artistic brushwork, detailed facial features, light background, "
-    "natural colors, gentle shading, clear lines, emotional and artistic"
+    "A realistic portrait of a man with short, styled hair and a beard, wearing a checkered shirt, standing in front of an urban or industrial background, natural lighting, detailed skin texture, expressive eyes, photographic realism, sharp focus, high resolution"
+
 )
 
 
 # Enhanced negative prompt
 negative_prompt = (
-    "blurry, distorted, abstract, washed out, blue tint, unnatural colors, missing details, text, watermark, surreal lighting"
+    "blurry, low resolution, cartoon, painting, sketch, drawing, anime, unrealistic, extra limbs, distorted face, text, watermark"
 )
 
 
