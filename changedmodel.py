@@ -60,7 +60,7 @@ result = pipeline(
     image=init_image,
     control_image=canny_image,
     controlnet_conditioning_scale = 1.2,  # Higher control strength for better structure preservation
-    strength = 0.4,# Balance between original image and new style
+    strength = 0.8,# Balance between original image and new style
     guidance_scale=9.0,           # Prompt adherence strength
     num_inference_steps=40        # Number of denoising steps
 ).images[0]
