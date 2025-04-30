@@ -45,18 +45,18 @@ face_image = init_image
 
 # Improved prompt with more emphasis on recognizable features
 prompt = (
-   "Ghibli-inspired anime portrait, masterful composition, global elegance , "
-    "lush watercolor palette, cinematic lighting, vivid storytelling, "
-   "highly detailed, expressive face, warm and whimsical atmosphere,"  
-
+    "Studio Ghibli style anime portrait, soft painted textures, hand-drawn look, "
+    "emotive large eyes, subtle facial expression, delicate shading, "
+    "vibrant forest light, serene background, warm nostalgic tone"
 )
+
 
 # Enhanced negative prompt
 negative_prompt = (
-    "blurry, distorted, low-res, poorly drawn, unnatural expression," 
-    "off-model face, bad anatomy, washed out colors, low detail." 
-
+    "blurry, low quality, harsh lines, photorealism, plastic skin, "
+    "distorted face, bad anatomy, emotionless expression"
 )
+
 
 # Generate the image with dual ControlNets
 result = pipeline(
