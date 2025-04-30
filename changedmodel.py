@@ -42,15 +42,12 @@ canny_image = Image.fromarray(canny_image)
 
 # Universal Ghibli style prompt that works for any image
 prompt = (
-    "Studio Ghibli art style, hand-painted by Hayao Miyazaki, traditional animation, "
-    "soft watercolor painting, gentle brushstrokes, pastel color palette, "
-    "detailed backgrounds, simple facial features, warm atmospheric lighting, "
-    "artistic and whimsical, distinctive Ghibli aesthetic, nostalgic feeling, "
-    "2D animation style, masterpiece quality, beautifully illustrated"
+    "Ghibli-style watercolor illustration, hand-drawn, natural expression, detailed face, clean lines, warm lighting, soft pastel background, gentle shading, artistic and charming"
 )
 
 # Enhanced negative prompt
 negative_prompt = (
+    "washed out, low contrast, missing facial features, excessive abstraction,"
     "3d, cgi, render, photorealistic, photography, realistic, hyperrealistic, "
     "low quality, pixelated, grainy, blurry, noise, text, watermark, signature, "
     "distorted anatomy, deformed, extra limbs, mutated, ugly, oversaturated"
@@ -62,8 +59,8 @@ result = pipeline(
     negative_prompt=negative_prompt,
     image=init_image,
     control_image=canny_image,
-    controlnet_conditioning_scale=1.0,  # Higher control strength for better structure preservation
-    strength=0.6,                # Balance between original image and new style
+    controlnet_conditioning_scale = 1.2,  # Higher control strength for better structure preservation
+    strength = 0.4,# Balance between original image and new style
     guidance_scale=9.0,           # Prompt adherence strength
     num_inference_steps=40        # Number of denoising steps
 ).images[0]
