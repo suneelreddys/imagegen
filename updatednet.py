@@ -45,12 +45,17 @@ face_image = init_image
 
 # Improved prompt with more emphasis on recognizable features
 prompt = (
-    "Ghibli style, detailed anime portrait, clear face, watercolor, Miyazaki art, smooth details"
+   "Ghibli-inspired anime portrait, masterful composition, global elegance , "
+    "lush watercolor palette, cinematic lighting, vivid storytelling, "
+   "highly detailed, expressive face, warm and whimsical atmosphere,"  
+
 )
 
 # Enhanced negative prompt
 negative_prompt = (
-    "blurry, distorted, low quality, deformed face, bad anatomy"
+    "blurry, distorted, low-res, poorly drawn, unnatural expression," 
+    "off-model face, bad anatomy, washed out colors, low detail." 
+
 )
 
 # Generate the image with dual ControlNets
